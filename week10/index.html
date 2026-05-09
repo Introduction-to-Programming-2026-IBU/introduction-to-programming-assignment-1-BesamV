@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notes</title>
+</head>
+<body>
+
+<h1>Your Notes</h1>
+
+<a href="/logout">Logout</a>
+
+<form method="post">
+    <input name="note" placeholder="Write note">
+    <button>Add</button>
+</form>
+
+<ul>
+    {% for note in notes %}
+        <li>
+            {{ note.content }}
+            <form action="/delete" method="post" style="display:inline;">
+                <input type="hidden" name="id" value="{{ note.id }}">
+                <button>❌</button>
+            </form>
+        </li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
