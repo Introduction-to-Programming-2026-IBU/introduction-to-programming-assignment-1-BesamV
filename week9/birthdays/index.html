@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Birthdays</title>
+</head>
+<body>
+
+<h1>Birthdays</h1>
+
+<form method="post">
+    <input name="name" placeholder="Name">
+    <input name="day" placeholder="Day">
+    <input name="month" placeholder="Month">
+    <button type="submit">Add</button>
+</form>
+
+<h2>All Birthdays</h2>
+
+<ul>
+    {% for b in birthdays %}
+        <li>{{ b.name }} - {{ b.day }}/{{ b.month }}</li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>

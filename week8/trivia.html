@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Trivia</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: #f0f2f5;
+            margin-top: 50px;
+        }
+
+        button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+        }
+
+        .correct {
+            background-color: green;
+            color: white;
+        }
+
+        .wrong {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Trivia</h1>
+
+<h3>What is the capital of France?</h3>
+
+<button onclick="check(this, true)">Paris</button>
+<button onclick="check(this, false)">London</button>
+<button onclick="check(this, false)">Berlin</button>
+
+<p id="result"></p>
+
+<script>
+function check(button, correct) {
+    let result = document.getElementById("result");
+
+    if (correct) {
+        button.classList.add("correct");
+        result.innerHTML = "Correct!";
+    } else {
+        button.classList.add("wrong");
+        result.innerHTML = "Wrong!";
+    }
+}
+</script>
+
+</body>
+</html>
